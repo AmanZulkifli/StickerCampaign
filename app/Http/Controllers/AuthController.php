@@ -57,7 +57,7 @@ class AuthController extends Controller
         $user = User::create($validated);
 
         Auth::login($user);
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('registered', true);;
     }
 
     public function logout()
